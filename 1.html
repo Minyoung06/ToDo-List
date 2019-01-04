@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        height: 100vh;
+        background-color: pink;
+      }
+      .container {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-extend-lg navbar-dark bg-dark">
+      hello bootstrap
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-3 bg-info">hello 3</div>
+        <div class="col-9 bg-primary">hello 9</div>
+      </div>
+      <div class="row">
+        <div class="col-2 bg-danger">hello 2</div>
+        <div class="col-8 bg-secondary">hello 8</div>
+        <div class="col-2 bg-danger">hello 2</div>
+      </div>
+      <div class="row">
+        <div class="col-5"></div>
+        <button class="btn btn-primary btn-lg col-2">버튼</button>
+        <div class="col-5"></div>
+      </div>
+      <div class="row">
+        <div
+          class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-1 bg-danger pt-0 pt-md-4 d-flex justify-content-center justify-content-md-start d-md-block"
+        >
+          <!--웹 반응형할때/블로그참고-->
+          <!--p-1에서 p는 padding-->
+          <!--primary secondary success info warning danger ->색 관련 외워두면 좋을것-->
+          hello
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

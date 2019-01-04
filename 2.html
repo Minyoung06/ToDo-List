@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .template {
+        width: 600px;
+        height: 600px;
+      }
+      .todo-list-item {
+        width: 100%;
+        font-size: 14px;
+        border: 1px solid #f0f0f0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="d-flex flex-column">
+      <div class="input-group">
+        <input id="todo" class="form-control" placeholder="To Do" />
+        <button id="confirm" class="btn btn-primary">확인</button>
+      </div>
+      <div id="list">
+        <div class="todo-list-item p-2 text-center">부트스트랩 공부하기</div>
+      </div>
+    </div>
+    <script>
+      var index = 0;
+      document.querySelector("#confirm").onclick = function() {
+        var message = document.querySelector("#todo").value;
+        document.querySelector("#list").innerHTML +=
+          '<div class="todo-list-item p-2 text-center">' + message + "</div>";
+        document.querySelector("#todo").value = "";
+      };
+      /*
+      click하면 function 호출
+      h.w:
+      1.kakao-talk 완성
+      2.
+      todolist 스타일링+삭제+수정버튼+없을때는 리스트 안뜨게+리스트 색 바꾸기 등 해보기
+      ex)40번쨰줄 호출 이후에 id를 추가 등
+      3.모멘텀 인강(바닐라자바 인강)
+      */
+    </script>
+  </body>
+</html>
