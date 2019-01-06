@@ -19,6 +19,9 @@
         font-size: 14px;
         border: 1px solid #f0f0f0;
       }
+      .ToDoButton {
+        width: 100px;
+      }
     </style>
   </head>
 
@@ -26,24 +29,31 @@
     <div class="d-flex flex-column">
       <div class="input-group">
         <input id="todo" class="form-control" placeholder="To Do" />
-        <button id="confirm" class="btn btn-primary">확인</button>
+        <button id="confirm" class="btn btn-primary ToDoButton">확인</button>
       </div>
-      <div id="list">
-        <div class="todo-list-item p-2 text-center">부트스트랩 공부하기</div>
-        <div class="d-flex">
-          <button class="btn btn-primary">수정</button>
-          <button class="btn btn-secondary">삭제</button>
-        </div>
-      </div>
+      <div id="list"></div>
     </div>
     <script>
-      var index = 0;
+      var DeleteToDoItem = function(DOM) {
+        DOM.parentElement.remove();
+      };
+      var ModifyToDoItem = function(DOM) {
+        var modifyText = prompt();
+        DOM.parentElement.children[0].innerText = modifyText;
+      };
       document.querySelector("#confirm").onclick = function() {
         var message = document.querySelector("#todo").value;
         document.querySelector("#list").innerHTML +=
-          '<div class="todo-list-item p-2 text-center">' + message + "</div>";
+          '<div class="d-flex">' +
+          '<div class="todo-list-item p-2 text-center">' +
+          message +
+          "</div>" +
+          "<button class='btn btn-info ToDoButton' onclick='ModifyToDoItem(this)'>수정</button>" +
+          "<button class='btn btn-danger ToDoButton' onclick='DeleteToDoItem(this)'>삭제</button>" +
+          "</div>";
         document.querySelector("#todo").value = "";
       };
+
       /*
       click하면 function 호출
       h.w:
